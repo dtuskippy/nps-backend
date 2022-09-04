@@ -6,8 +6,9 @@ const axios = require('axios');
 async function getParks(request, response, next) {
 
   const state = request.query.state;
+  const limit = 10;
   console.log('state', state);
-  const url = `https://developer.nps.gov/api/v1/parks?q=stateCode=${state}&limit=10&api_key=${process.env.NPS_API_KEY}`;
+  const url = `https://developer.nps.gov/api/v1/parks?q=stateCode=${state}&limit=${limit}&api_key=${process.env.NPS_API_KEY}`;
   //https://developer.nps.gov/api/v1/parks?q=Biking&stateCode=ca&limit=3&api_key=qwJ7GoP7sWgRkS1TYC5CuMo1LokSbs6UR9Hkc3pB
   // const url = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.MOVIEDB_API_KEY}&language=en-US&query=${city}&page=1&include_adult=false`;
   // https://api.themoviedb.org/3/search/movie?api_key=079169378594480c9faa05367e9900ab&language=en-US&query=Pittsburgh&page=1&include_adult=false
