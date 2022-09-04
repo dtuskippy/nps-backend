@@ -21,7 +21,7 @@ app.use(cors());
 
 app.get('/', (request, response) => {
   console.log('This base route is showing up in the terminal!');
-  response.status(200).send('Welcome to our server');
+  response.status(200).send('Welcome to GizmoLand');
 });
 
 // app.get('/hello', (request, response) => {
