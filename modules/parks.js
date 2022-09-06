@@ -7,6 +7,7 @@ async function getParks(request, response, next) {
   const state = request.query.state;
   const activities = request.query.activities;
 
+
   const limit = 50;
   console.log('state', state);
   const url = `https://developer.nps.gov/api/v1/parks?stateCode=${state}&limit=${limit}&api_key=${process.env.NPS_API_KEY}`;
