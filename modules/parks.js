@@ -20,8 +20,8 @@ async function getParks(request, response, next) {
       return park.activities.some(activity => {
         return activity.name === activities;
       });
-    }).map(object => {
-      return new Parks(object);
+    }).map(park => {
+      return new Parks(park);
     });
 
     response.status(200).send(dataToSend);
@@ -32,8 +32,14 @@ async function getParks(request, response, next) {
 }
 
 class Parks {
-  constructor(parksObj) {
-    this.parks = parksObj.fullName;
+  constructor(parkObject) {
+    this.parks = parkObject.fullName;
+    // this.description = parkObject.description;
+    // this.parkCode = parkObject.parkCode;
+    // this.latitude = parkObject.latitude;
+    // this.longitude = parkObject.longitude;
+    // this.activities = parkObject.activities;
+    // this.url = parkObject.url;
   }
 }
 
